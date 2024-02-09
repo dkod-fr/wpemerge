@@ -5,6 +5,7 @@ namespace WPEmergeTests\Exceptions;
 use Exception;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Utils;
 use Mockery;
 use Whoops\RunInterface;
 use WPEmerge\Exceptions\ErrorHandler;
@@ -122,7 +123,7 @@ class ErrorHandlerTest extends TestCase {
 		$this->response_service->shouldReceive( 'output' )
 			->andReturnUsing( function ( $output ) {
 				return (new Response())
-					->withBody( Psr7\stream_for( $output ) );
+					->withBody( Utils::streamFor( $output ) );
 			} );
 
 		$subject = new ErrorHandler( $this->response_service, $whoops, true );

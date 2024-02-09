@@ -11,6 +11,7 @@ namespace WPEmerge\View;
 
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Utils;
 
 /**
  * Render a view file with php.
@@ -118,6 +119,6 @@ class PhpView implements ViewInterface {
 	public function toResponse() {
 		return (new Response())
 			->withHeader( 'Content-Type', 'text/html' )
-			->withBody( Psr7\stream_for( $this->toString() ) );
+			->withBody( Utils::streamFor( $this->toString() ) );
 	}
 }

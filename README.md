@@ -12,7 +12,7 @@
 
 ## Requirements
 
-- [PHP](http://php.net/) >= 5.5
+- [PHP](http://php.net/) >= 7.4
 - [WordPress](https://wordpress.org/) >= 4.7
 - [Composer](https://getcomposer.org/)
 

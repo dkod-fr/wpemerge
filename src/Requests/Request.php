@@ -21,7 +21,8 @@ class Request extends ServerRequest implements RequestInterface {
 	 * {@inheritDoc}
 	 * @return static
 	 */
-	public static function fromGlobals() {
+	public static function fromGlobals(): RequestInterface
+	{
 		$request = parent::fromGlobals();
 		$new = new self(
 			$request->getMethod(),
