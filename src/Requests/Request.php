@@ -74,7 +74,7 @@ class Request extends ServerRequest implements RequestInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getMethod() {
+	public function getMethod(): string {
 		$method = parent::getMethod();
 
 		if ( $method === 'POST' ) {
